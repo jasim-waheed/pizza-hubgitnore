@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-crust-50 text-char-900 font-body antialiased;
+}
+
+::selection {
+  @apply bg-tomato-600 text-crust-50;
+}
+
+:focus-visible {
+  outline: 2px solid #E8432A;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Signature motif: a torn kitchen order-ticket edge, used on the tracking card */
+.ticket-edge {
+  position: relative;
+}
+.ticket-edge::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background-image: radial-gradient(circle at 10px 0, transparent 9px, #FFF8ED 10px);
+  background-size: 20px 10px;
+  background-repeat: repeat-x;
+}
+
+.perforation {
+  background-image: repeating-linear-gradient(to right, #d8cdb8 0, #d8cdb8 6px, transparent 6px, transparent 12px);
+  height: 1px;
+}
